@@ -1,0 +1,235 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors zhaokui (zhaokui@creditharmony.cn)
+ * @date    2017-08-16 13:27:38
+ * @version $Id$
+ */
+
+body{
+	color:#333;
+	font-family: "Microsoft YaHei",Arial;
+	font-size:12px;
+	margin:0 auto;
+	background:#fff;
+}
+
+
+/*公用样式*/
+a{text-decoration:none;color:#3a3a3a;}
+a:hover, a:active, a:focus{text-decoration:none;}
+a:hover,button:hover{
+	filter:alpha(opacity=80);
+ -moz-opacity:0.8;
+ -khtml-opacity: 0.8;
+ opacity: 0.8;}
+img {border:none;vertical-align:middle;}
+
+*:focus { outline: none; }
+
+/*背景颜色*/
+.bg-gray {
+	background:#f8f8f8;
+}
+
+.bg-white {
+	background:#fff;
+}
+
+.xk-t2 {vertical-align: -2px;}
+
+/*盒子模型*/
+.mg-t24 {margin-top:24px;}
+.mg-l50 {margin-left:50px;}
+.mg-t30 {margin-top:30px;}
+.mg-t35 {margin-top:35px;}
+.mg-t40 {margin-top:40px;}
+.mg-t45 {margin-top:45px;}
+.mg-t50 {margin-top:50px;}
+.mg-l165 {margin-left:165px;}
+.pd-t50 {padding-top:50px;}
+.pd-b50 {padding-bottom:50px;}
+.mg-l100 {margin-left:100px;}
+.pd-t12 {padding-top:12px;}
+.pd-b12 {padding-bottom:12px;}
+.mg-t19 {margin-top:19px;}
+.pd-t19 {padding-top:19px;}
+.mg-l40 {margin-left:40px;}
+.mg-l50 {margin-left:50px;}
+.mg-l80 {margin-left:80px;}
+.mg-l78 {margin-left:78px;}
+.pd40 {padding:40px;}
+.mg-t70 {margin-top:70px;}
+.mg-t60 {margin-top:60px;}
+.pd-t60 {padding-top:60px;}
+.pd-t28 {padding-top:28px;}
+.mg-l35 {margin-left:35px;}
+.mg-l18 {margin-left:18px;}
+.mg-b40 {margin-bottom:40px;}
+.pd-l60 {padding-left:60px;}
+.pd-r60 {padding-right:60px;}
+.pd-l90 {padding-left:90px;}
+.pd-t35 {padding-top:35px;}
+.pd-b35 {padding-bottom:35px;}
+.pd-l18 {padding-left:18px;}
+.mg-r35 {margin-right:35px;}
+.mg-r30 {margin-right:30px;}
+
+/*颜色*/
+.chui3 {color:#666;}
+.chui4 {color:#ccc;}
+.chui5 {color:#999;}
+.chui6 {color:#d3d3d3;}
+.cred1 {color:#ff7b7b;}
+
+/*行高*/
+.lh20 {line-height:20px;}
+.lh22 {line-height:22px;}
+.lh24 {line-height:24px;}
+.lh26 {line-height:26px;}
+.lh28 {line-height:28px;}
+.lh30 {line-height:30px;}
+.lh36 {line-height:36px;}
+.lh40 {line-height:40px;}
+.lh45 {line-height:45px;}
+.lh60 {line-height:60px;}
+.lh90 {line-height:90px;}
+
+/*字号*/
+.fz12 {font-size:12px;}
+.fz14 {font-size:14px;}
+.fz16 {font-size:16px;}
+.fz18 {font-size:18px;}
+.fz20 {font-size:20px;}
+.fz22 {font-size:22px;}
+.fz24 {font-size:24px;}
+.fz26 {font-size:26px;}
+.fz28 {font-size:26px;}
+.fz30 {font-size:30px;}
+.fz32 {font-size:32px;}
+.fz36 {font-size:36px;}
+.fz56 {font-size:56px;}
+.fz94 {font-size:94px;}
+
+.bolder {font-weight:bolder;}
+
+h2 {font-weight:normal;}
+
+.ti2 {text-indent:2em;}
+
+/*定位*/
+.p-r {position:relative;}
+.p-a {position:absolute;}
+
+
+/*header*/
+.header {
+	width:100%;
+	height:90px;
+}
+
+.wd1200 {
+	width:1200px;
+	margin:0 auto;
+}
+
+/*菜单*/
+.menu {
+	height:46px;
+	margin:22px 0 0 80px;
+}
+
+.menu a {
+	height:45px;
+	line-height:45px;
+	padding:0 3px;
+	color:#333;
+	display:inline-block;
+	font-size:18px;
+}
+
+.menu a:hover,.menu .cur {
+	border-bottom:2px #004d58 solid;
+	color:#004d58;
+}
+
+.search-box {
+	width:132px;
+	height:30px;
+	border:1px #d3d3d3 solid;
+	border-radius: 15px;
+	padding:0 9px;
+}
+
+.search-box .search-icon {
+	width:20px;
+	height:20px;
+	background:url(../images/search-icon.png) no-repeat;
+}
+
+.search-box .srk1 {
+	border:none;
+	height:15px;
+	line-height:24px;
+	margin-top:3px;
+	width:106px;
+}
+
+/*footer*/
+.footer {
+	width:100%;
+	background:#282f33;
+	color:#fff;
+}
+
+.footer a {
+	color:#fff;
+}
+
+.footer .ew-code {
+	width:95px;
+	height:96px;
+	background:url(../images/ew-code.png) no-repeat;
+	display:inline-block;
+}
+
+.footer .rx-icon {
+	width:80px;
+	height:87px;
+	background:url(../images/rx-icon.png) no-repeat;
+	display:inline-block;
+}
+
+.footer .foot-txt {
+	border-top:1px #343637 solid;
+	background:#292f33;
+}
+
+.footer .chui {color:#c1c2c2}
+
+/*侧边栏*/
+.sidebar {
+	position:fixed;
+	right:0;
+	width:60px;
+	top:50%;
+}
+
+.sidebar .bl1,.sidebar .bl2,.sidebar .bl3,.sidebar .bl4 {
+	width:60px;
+	height:60px;
+	background:url(../images/sidebar.png) no-repeat;
+	display:block;
+}
+
+.sidebar .bl2 {
+	background-position:0 -60px;
+}
+
+.sidebar .bl3 {
+	background-position:0 -120px;
+}
+
+.sidebar .bl4 {
+	background-position:0 -180px;
+}

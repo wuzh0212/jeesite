@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>webox弹出窗口演示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="webox.js"></script>
+<link type="text/css" rel="stylesheet" href="webox.css" />
+<style>
+body{font:14px/22px 'Arial', 'Helvetica', '宋体';}
+</style>
+</head>
+<body>
+
+<h1>默认弹出窗口<input type="button" id="test1" value="演示[id=test1]"></h1>
+<span style="font-size:14px;color:#999">(按Esc键可关闭窗口)</span>
+<pre>
+$("#test1").click(function(){
+	$.webox.open('这是直接显示的内容'});
+});
+</pre>
+<img alt="" src="images/demo1.jpg">
+<script type="text/javascript">
+$("#test1").click(function(){
+	$.webox.open('这是直接显示的内容<br/><br/>');
+});
+</script>
+<hr>
+
+<h1>标准提示窗口一<input type="button" id="test2" value="演示[id=test2]"></h1>
+<pre>
+$("#test2").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_tips'});
+});
+</pre>
+<img alt="" src="images/demo2.jpg">
+<script type="text/javascript">
+$("#test2").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_tips'});
+});
+</script>
+<hr>
+
+<h1>标准提示窗口二<input type="button" id="test2_1" value="演示[id=test2_1]"></h1>
+<pre>
+$("#test2_1").click(function(){
+	$.webox.open('这是提示一的内容', {boxclass:'webox_tips',title:'提示一',boxid:'address',okBtnName:'下一步',onok:function (){$.webox.open('这是提示二的内容', {boxclass:'webox_tips',title:'提示二',boxid:'address',modal:false,});},modal:false,});
+});
+<br />
+单击非确定、关闭按钮执行弹出第二个窗口
+$("#test1").click(function(){
+	$.webox.open('#add-lgr', {contentType:'selector',boxclass:'webox_function1',title:'选择领购人',boxid:'address',showButton:false,width:'650',height:'480',});
+	$(".ddd").click(function(){
+		$.webox.open('#edit-lgr', {contentType:'selector',boxclass:'webox_function1',title:'请填写领购文件的联系人信息，以便变更时能及时通知到',boxid:'address',width:'400',});
+	});
+});
+</pre>
+<img alt="" src="images/demo2.jpg">
+<script type="text/javascript">
+// 弹窗出弹窗
+$("#test2_1").click(function(){
+	$.webox.open('这是提示一的内容', {boxclass:'webox_tips',title:'提示一',boxid:'address',okBtnName:'下一步',onok:function (){$.webox.open('这是提示二的内容', {boxclass:'webox_tips',title:'提示二',boxid:'address',modal:false,});},modal:false,});
+});
+
+
+</script>
+<hr>
+
+<h1>功能窗口，蓝色<input type="button" id="test3" value="演示[id=test3]"></h1>
+<pre>
+$("#test3").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_function', title:'加关注'});
+});
+</pre>
+<img alt="" src="images/demo3.jpg">
+<script type="text/javascript">
+$("#test3").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_function',title:'加关注',onok: function (){window.location='http://baidu.com'}});
+});
+
+</script>
+<hr>
+
+<h1>成功提示，居中，2秒消失<input type="button" id="test4" value="演示[id=test4]"></h1>
+<pre>
+$("#test4").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_tipsOk', showClose:false, modal:false, timeout:2});
+});
+</pre>
+<img alt="" src="images/demo4.jpg">
+<script type="text/javascript">
+$("#test4").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_tipsOk', showClose:false, modal:false, timeout:2});
+});
+</script>
+<hr>
+
+<h1>成功提示，以按钮定位，2秒消失<input type="button" id="test5" value="演示[id=test5]"></h1>
+<pre>
+$("#test5").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_tipsOk', showClose:false, modal:false, timeout:2, position:{refele:this,reftop:10}});
+});
+$("#test5").click(function(){
+	$.webox.open('#ddxq', {contentType:'selector',boxclass:'webox_function1',title:'详细信息',showButton:false,modal:false,width:'990',position:{refele:'[name=tb01]',reftop:10}});
+});
+
+</pre>
+<img alt="" src="images/demo5.jpg">
+<script type="text/javascript">
+$("#test5").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_tipsOk', showClose:false, modal:false, timeout:2, position:{refele:this,reftop:10}});
+});
+</script>
+<hr>
+
+<h1>自定义窗口<input type="button" id="test6" value="演示[id=test6]"></h1>
+<pre>
+$("#test6").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_custom'});
+});
+</pre>
+<img alt="" src="images/demo6.jpg">
+<script type="text/javascript">
+$("#test6").click(function(){
+	$.webox.open('这是直接显示的内容', {boxclass:'webox_custom'});
+});
+$(document).keydown(function(e){
+	if (e.keyCode==27){
+		jQuery.webox.close();
+	}
+})
+</script>
+<hr>
+</body>
+</html>
