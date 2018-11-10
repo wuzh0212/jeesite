@@ -38,6 +38,8 @@ public interface CategoryDao extends TreeDao<Category> {
 //	}
 
 	public List<Category> findByParentIdAndSiteId(Category entity);
+	public Category getByHref(Category entity);
+	
 	
 	public List<Map<String, Object>> findStats(String sql);
 //	{

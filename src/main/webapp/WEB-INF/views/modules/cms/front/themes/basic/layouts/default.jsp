@@ -12,7 +12,7 @@
 <body>
 	<div class="header">
 		<div class="wd1200 fn-clear">
-			<a href="../home/index.html" class="fl mg-t24"><img src="${myTheme}/images/logo.png"></a>
+			<a href="${ctx}/index-1${fns:getUrlSuffix()}" class="fl mg-t24"><img src="${myTheme}/images/logo.png"></a>
 			<div class="fl menu">
 				<a href="${ctx}/index-1${fns:getUrlSuffix()}" class="cur">首页</a>
 				<c:forEach items="${fnc:getMainNavList(site.id)}" var="category" varStatus="status"><c:if test="${status.index lt 5}">
@@ -38,7 +38,7 @@
 		</div>
 		<!-- 侧边栏 -->
 	<div class="sidebar">
-		<a href="javascript:void(0);" class="bl1"></a>
+		<!-- <a href="javascript:void(0);" class="bl1"></a> -->
 		<a href="javascript:void(0);" class="bl2 mg-t5"></a>
 		<a href="javascript:void(0);" class="bl3 mg-t5"></a>
 		<a href="#" class="bl4 mg-t5"></a>
@@ -64,7 +64,7 @@
 					</ul>
 					<ul class="fl mg-l165 lh30 txt-c">
 						<li class="fz16">关注汇诚</li>
-						<li class="ew-code mg-t10"></li>
+						<li class="ew-code mg-t10" style="background:url(${webName}/userfiles/1/images/ew-code.png) no-repeat;"></li>
 					</ul>
 					<ul class="fl mg-l165">
 						<dl class="fn-clear mg-t30">

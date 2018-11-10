@@ -43,7 +43,7 @@
 		JOIN cms_site s ON a.site_id = s.id
 	</sql>
     
-	<select id="get" resultType="Category">
+	 <select id="get" resultType="Category">
 		SELECT 
 			a.id AS "id",
 			a.parent_id AS "parent.id",
@@ -77,6 +77,45 @@
 		JOIN sys_office o ON o.id = a.office_id
 		JOIN sys_user u ON u.id = a.create_by
 		WHERE a.id = #{id}
+	</select>
+	<select id="getfdg" resultType="Category" >
+		SELECT 
+			a.id AS "id",
+			a.parent_id AS "parent.id",
+			a.parent_ids AS "parentIds",
+			a.site_id AS "site.id",
+			a.office_id AS "office.id",
+			a.module AS "module",
+			a.name AS "name",
+			a.image AS "image",
+			a.href AS "href",
+			a.target AS "target",
+			a.description AS "description",
+			a.keywords AS "keywords",
+			a.sort AS "sort",
+			a.in_menu AS "inMenu",
+			a.in_menu AS "inList",
+			a.show_modes AS "showModes",
+			a.allow_comment AS "allowComment",
+			a.is_audit AS "isAudit",
+			a.custom_list_view AS "customListView",
+			a.custom_content_view AS "customContentView",
+			a.view_config AS "viewConfig",
+			a.create_by AS "createBy.id",
+			a.create_date AS "createDate",
+			a.update_by AS "updateBy.id",
+			a.update_date AS "updateDate",
+			a.remarks AS "remarks",
+			a.del_flag AS "delFlag",
+			o.name AS "office.name"
+		FROM cms_category a
+		JOIN sys_office o ON o.id = a.office_id
+		JOIN sys_user u ON u.id = a.create_by
+		WHERE
+		a.del_flag = #{delFlag}
+			<if test=" href != null and href != ''">
+				AND a.href  = #{href}
+			</if>
 	</select>
 	
 	<select id="find" resultType="Category">
@@ -258,6 +297,47 @@
 		</where>		
 		order by a.site_id, a.sort
 	</select>
+	<select id="getByHref" resultType="Category">
+		SELECT 
+			a.id AS "id",
+			a.parent_id AS "parent.id",
+			a.parent_ids AS "parentIds",
+			a.site_id AS "site.id",
+			a.office_id AS "office.id",
+			a.module AS "module",
+			a.name AS "name",
+			a.image AS "image",
+			a.href AS "href",
+			a.target AS "target",
+			a.description AS "description",
+			a.keywords AS "keywords",
+			a.sort AS "sort",
+			a.in_menu AS "inMenu",
+			a.in_menu AS "inList",
+			a.show_modes AS "showModes",
+			a.allow_comment AS "allowComment",
+			a.is_audit AS "isAudit",
+			a.custom_list_view AS "customListView",
+			a.custom_content_view AS "customContentView",
+			a.view_config AS "viewConfig",
+			a.create_by AS "createBy.id",
+			a.create_date AS "createDate",
+			a.update_by AS "updateBy.id",
+			a.update_date AS "updateDate",
+			a.remarks AS "remarks",
+			a.del_flag AS "delFlag",
+			o.name AS "office.name"
+		FROM cms_category a
+		JOIN sys_office o ON o.id = a.office_id
+		JOIN sys_user u ON u.id = a.create_by
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL} 
+			<if test="parent.href != null and parent.href != ''">
+				AND a.href  = #{parent.href}
+			</if>
+		</where>		
+	</select>
+	
 	<select id="findByParentIdsLike" resultType="Category">
 		SELECT 
 			<include refid="cmsCategoryDaoColumns"/>

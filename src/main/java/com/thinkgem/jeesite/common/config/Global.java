@@ -59,6 +59,7 @@ public class Global {
 	 */
 	public static final String USERFILES_BASE_URL = "/userfiles/";
 	
+	
 	/**
 	 * 获取当前对象实例
 	 */

@@ -175,5 +175,11 @@ public class CategoryService extends TreeService<CategoryDao, Category> {
 		}
 		return list;
 	}
+
+	public Category getByHref(Category category) {
+		return dao.getByHref(category);
+	}
+
+	
 	
 }
