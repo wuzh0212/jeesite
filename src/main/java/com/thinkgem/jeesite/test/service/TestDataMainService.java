@@ -32,6 +32,7 @@ public class TestDataMainService extends CrudService<TestDataMainDao, TestDataMa
 	public TestDataMain get(String id) {
 		TestDataMain testDataMain = super.get(id);
 		testDataMain.setTestDataChildList(testDataChildDao.findList(new TestDataChild(testDataMain)));
+		String ss="sdfs";
 		return testDataMain;
 	}
 	
